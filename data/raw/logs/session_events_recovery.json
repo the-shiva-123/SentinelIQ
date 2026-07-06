@@ -1,0 +1,80 @@
+SESSION RECOVERY INITIATED 2024-01-15T03:47:22Z
+Recovering uncommitted session data from prod-auth-svc-01...
+{"session_id":"SES-4000","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb20
+{"session_id":"SES-4002","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4003","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb23
+{"session_id":"SES-4005","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4006","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb26
+{"session_id":"SES-4008","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4009","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb29
+{"session_id":"SES-4011","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4012","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb2c
+{"session_id":"SES-4014","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4015","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb2f
+{"session_id":"SES-4017","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4018","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb32
+{"session_id":"SES-4020","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4021","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb35
+{"session_id":"SES-4023","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4024","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb38
+{"session_id":"SES-4026","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4027","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb3b
+{"session_id":"SES-4029","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4030","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb3e
+{"session_id":"SES-4032","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4033","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb41
+{"session_id":"SES-4035","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4036","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb44
+{"session_id":"SES-4038","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4039","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb47
+{"session_id":"SES-4041","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4042","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb4a
+{"session_id":"SES-4044","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4045","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb4d
+{"session_id":"SES-4047","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4048","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb50
+{"session_id":"SES-4050","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4051","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb53
+{"session_id":"SES-4053","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4054","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb56
+{"session_id":"SES-4056","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4057","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb59
+{"session_id":"SES-4059","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4060","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb5c
+{"session_id":"SES-4062","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4063","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb5f
+{"session_id":"SES-4065","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4066","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb62
+{"session_id":"SES-4068","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4069","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb65
+{"session_id":"SES-4071","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4072","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb68
+{"session_id":"SES-4074","user":"identity-sre@asterion.example","state":CORRUPTED
+{"session_id":"SES-4075","user":
+RECOVERY ERROR: Buffer corruption at offset 0xb6b
+{"session_id":"SES-4077","user":"identity-sre@asterion.example","state":CORRUPTED

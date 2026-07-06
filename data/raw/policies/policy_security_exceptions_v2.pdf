@@ -1,0 +1,36 @@
+CORRUPTED
+=== CORRUPTION MARKER: First 8 bytes of this file must be replaced with 0x43 0x4F 0x52 0x52 0x55 0x50 0x54 0x45 before saving ===
+=== CORRUPTION MARKER: First 8 bytes of this file must be replaced with 0x43 0x4F 0x52 0x52 0x55 0x50 0x54 0x45 before saving ===
+DOCUMENT CONTROL
+================
+Document ID    : POL-2022-048
+Document Title : Security Exceptions Policy v2
+Document Type  : Policy
+Version        : 2.0
+Status         : Active
+Effective Date : 01-Jan-2022
+Review Date    : 01-Jan-2023
+Owner          : Security Operations Team
+Author         : Ravi Chandrasekaran
+Approved By    : Rajesh Venkatraman, Service Delivery Manager (NexaTel)
+Classification : Internal — NexaTel Managed Services
+Last Revised   : 01-Jan-2022
+
+REVISION HISTORY
+================
+| Version | Date        | Author           | Summary of Changes                  |
+|---------|-------------|------------------|-------------------------------------|
+| 2.0     | 01-Jan-2022 | R. Chandrasekaran| Version 2 Initial Release           |
+
+1. PURPOSE
+==========
+Establishes the process for request, evaluation, and lifecycle management of security exceptions.
+
+2. SCOPE
+========
+All exception tracking.
+
+3. POLICY STATEMENT
+===================
+3.1 Process
+All exceptions must be approved by the CISO.

@@ -1,0 +1,691 @@
+{
+  "dataset_name": "SentinelIQ Raw Telecom Operations Dataset",
+  "dataset_version": "v001",
+  "created_at": "2026-06-07T13:40:57Z",
+  "created_by": "NexaTel Operations Team",
+  "source_summary": "Contains policies, release notes, architecture records, and logs representing operational events of NexaTel telecom infrastructure.",
+  "record_counts": {
+    "policies": 40,
+    "release_notes": 21,
+    "logs": 43,
+    "docs": 28
+  },
+  "known_edge_cases": "Includes corrupted PDFs, invalid zip headers in DOCX files, unclosed brackets/garbage logs, duplicate files, and potential prompt injection scripts.",
+  "license_notes": "Proprietary NexaTel internal operations data. For staging and training validation only.",
+  "pii_policy": "All support tickets and documents containing customer PII (e.g. emails, phone numbers) must be sanitized and flagged per PII policy instructions.",
+  "bad_files": 2,
+  "client": "NexaTel Communications Ltd.",
+  "service_provider": "Asterion Digital Operations Services Pvt. Ltd.",
+  "files": [
+    {
+      "path": "data/raw/docs/architecture/telecom_api_gateway_design.md",
+      "type": "architecture_document",
+      "description": "NexaTel Partner API Gateway Design documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_auth_architecture.md",
+      "type": "architecture_document",
+      "description": "NexaTel Identity and Authentication Architecture documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_billing/billing_cdr_consumption_flow.md",
+      "type": "billing_deep_dive",
+      "description": "NexaTel Billing CDR Consumption Flow."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_billing/billing_invoice_generation_flow.md",
+      "type": "billing_deep_dive",
+      "description": "NexaTel Invoice Generation Flow."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_billing/billing_mrc_proration_rules.md",
+      "type": "billing_deep_dive",
+      "description": "NexaTel Billing MRC Proration Rules."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_billing/billing_payment_reconciliation.md",
+      "type": "billing_deep_dive",
+      "description": "NexaTel Payment Reconciliation Specification."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_billing/billing_rating_engine_spec.md",
+      "type": "billing_deep_dive",
+      "description": "NexaTel Billing Rating Engine Specification."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_billing_system_overview.md",
+      "type": "architecture_document",
+      "description": "NexaTel Telecom Billing System Overview documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_data_lake_architecture.md",
+      "type": "architecture_document",
+      "description": "NexaTel Operations Data Lake Architecture documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_fraud_detection_system.md",
+      "type": "architecture_document",
+      "description": "NexaTel Fraud Detection System Architecture documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_kyc_integration.md",
+      "type": "architecture_document",
+      "description": "NexaTel Digital KYC Integration Architecture documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_mediation_pipeline.md",
+      "type": "architecture_document",
+      "description": "NexaTel CDR Mediation Pipeline Architecture documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_noc_alarm_system.md",
+      "type": "architecture_document",
+      "description": "NexaTel NOC Alarm Correlation and Alerting System documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_notification_hub.md",
+      "type": "architecture_document",
+      "description": "NexaTel SMS and Notification Hub Architecture documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_provisioning_flow.md",
+      "type": "architecture_document",
+      "description": "NexaTel SIM and eSIM Provisioning Architecture documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_roaming_architecture.md",
+      "type": "architecture_document",
+      "description": "NexaTel Roaming Architecture and TAP Validator documentation."
+    },
+    {
+      "path": "data/raw/docs/architecture/telecom_system_integration_guide.md",
+      "type": "architecture_document",
+      "description": "NexaTel System Integration and Operations Guide documentation."
+    },
+    {
+      "path": "data/raw/docs/decisions/ARCH-CR-001_vector_store_selection.docx",
+      "type": "decision_record_docx",
+      "description": "Vector Store Selection Decision Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/ARCH-CR-002_llm_provider_selection.docx",
+      "type": "decision_record_docx",
+      "description": "LLM Provider Selection Decision Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/ARCH-CR-003_oracle_vs_postgres.docx",
+      "type": "decision_record_docx",
+      "description": "Database Engine for Support Tickets Decision Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/ARCH-CR-004_chunking_strategy.md",
+      "type": "decision_record_md",
+      "description": "RAG Document Chunking Strategy Decision Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/ARCH-CR-005_embedding_model_selection.md",
+      "type": "decision_record_md",
+      "description": "Embedding Model Selection Decision Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/ARCH-CR-006_rag_grading_strategy.md",
+      "type": "decision_record_md",
+      "description": "RAG Context Grading and Reranking Strategy Decision Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/CHG-2023-001_architecture.docx",
+      "type": "decision_record_docx",
+      "description": "Migration from v2.x to v3.0 Architecture Change Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/CHG-2023-002_design.md",
+      "type": "decision_record_md",
+      "description": "LangGraph Node Restructuring Design Change Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/CHG-2024-001_architecture.docx",
+      "type": "decision_record_docx",
+      "description": "Chroma Vector Store Upgrade Architecture Change Record."
+    },
+    {
+      "path": "data/raw/docs/decisions/CHG-2024-002_design.md",
+      "type": "decision_record_md",
+      "description": "Safety Screening Node Enhancement Design Change Record."
+    },
+    {
+      "path": "data/raw/docs/escalation_runbook_scratch.md",
+      "type": "empty_marker",
+      "description": "Zero-byte file placeholder for the escalation runbook."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_01.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 01."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_02.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 02."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_03.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 03."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_04.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 04."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_05.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 05."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_06.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 06."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_07.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 07."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_08.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 08."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_09.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 09."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_10.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 10."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_11.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 11."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2021_12.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2021 12."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_01.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 01."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_02.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 02."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_03.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 03."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_04.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 04."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_05.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 05."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_06.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 06."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_07.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 07."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_08.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 08."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_09.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 09."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_10.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 10."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_11.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 11."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2022_12.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2022 12."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_01.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 01."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_02.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 02."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_03.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 03."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_04.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 04."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_05.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 05."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_06.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 06."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_07.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 07."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_08.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 08."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_09.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 09."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_09_ops.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 09 ops."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_10.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 10."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_11.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 11."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2023_12.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2023 12."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2024_01.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2024 01."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2024_02.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2024 02."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2024_03.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2024 03."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2024_04.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2024 04."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2024_05.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2024 05."
+    },
+    {
+      "path": "data/raw/logs/nexatel_managed_ops_2024_06.log",
+      "type": "log_file",
+      "description": "NexaTel Managed Operations Log for 2024 06."
+    },
+    {
+      "path": "data/raw/logs/session_events_recovery.json",
+      "type": "bad_file",
+      "description": "Invalid JSON events recovery file."
+    },
+    {
+      "path": "data/raw/policies/policy_access_control.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Access Control Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_api_gateway_security.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Api Gateway Security Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_api_versioning.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Api Versioning Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_audit_logging.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Audit Logging Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_auth_lockout.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Auth Lockout Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_backup_restore_sla.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Backup Restore Sla Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_billing_operations.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Billing Operations Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_business_continuity.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Business Continuity Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_cab_governance.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Cab Governance Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_cdr_retention.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Cdr Retention Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_change_management.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Change Management Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_data_classification.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Data Classification Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_data_retention.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Data Retention Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_disaster_recovery.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Disaster Recovery Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_fraud_operations.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Fraud Operations Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_incident_response.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Incident Response Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_incident_response_v2.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Incident Response V2 Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_incident_severity_definitions.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Incident Severity Definitions Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_key_rotation.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Key Rotation Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_kyc_vendor_integration.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Kyc Vendor Integration Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_llm_safety_screening.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Llm Safety Screening Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_logging_monitoring.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Logging Monitoring Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_network_segmentation.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Network Segmentation Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_noc_alarm_monitoring.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Noc Alarm Monitoring Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_oracle_db_operations.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Oracle Db Operations Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_password_management.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Password Management Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_pii_handling.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Pii Handling Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_prompt_injection_prevention.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Prompt Injection Prevention Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_rate_limiting.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Rate Limiting Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_release_governance.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Release Governance Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_roaming_operations.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Roaming Operations Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_secure_api_key_management.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Secure Api Key Management Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_security_exceptions.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Security Exceptions Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_security_exceptions_v2.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Security Exceptions V2 Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_sla_governance.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Sla Governance Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_support_ticket_escalation.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Support Ticket Escalation Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_user_access_reviews.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel User Access Reviews Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_vector_db_encryption.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Vector Db Encryption Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_vendor_risk.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Vendor Risk Policy."
+    },
+    {
+      "path": "data/raw/policies/policy_vulnerability_management.pdf",
+      "type": "policy_pdf",
+      "description": "NexaTel Vulnerability Management Policy."
+    },
+    {
+      "path": "data/raw/release_notes/deployment_checklist.txt",
+      "type": "bad_file",
+      "description": "Unsupported text file format in release notes."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2021_Q1_v1.0.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2021 Q1 v1.0.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2021_Q2_v1.1.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2021 Q2 v1.1.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2021_Q3_v1.2.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2021 Q3 v1.2.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2021_Q4_v1.3.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2021 Q4 v1.3.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2022_Q1_v2.0.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2022 Q1 v2.0.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2022_Q2_v2.1.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2022 Q2 v2.1.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2022_Q3_v2.2.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2022 Q3 v2.2.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2022_Q3_v2.2.0_hotfix1.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2022 Q3 v2.2.0 hotfix1."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2022_Q4_v2.3.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2022 Q4 v2.3.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2022_Q4_v2.3.1.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2022 Q4 v2.3.1."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2023_Q1_v2.4.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2023 Q1 v2.4.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2023_Q1_v2.4.1.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2023 Q1 v2.4.1."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2023_Q2_v2.5.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2023 Q2 v2.5.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2023_Q2_v2.5.0_corrupted.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2023 Q2 v2.5.0 corrupted."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2023_Q3_v2.6.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2023 Q3 v2.6.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2023_Q3_v2.6.1.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2023 Q3 v2.6.1."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2023_Q4_v2.7.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2023 Q4 v2.7.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2024_Q1_v3.0.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2024 Q1 v3.0.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2024_Q1_v3.0.1.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2024 Q1 v3.0.1."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2024_Q2_v3.1.0.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2024 Q2 v3.1.0."
+    },
+    {
+      "path": "data/raw/release_notes/release_notes_NXTEL_2024_Q2_v3.1.0_final.docx",
+      "type": "release_note_docx",
+      "description": "NexaTel Release Notes for NXTEL 2024 Q2 v3.1.0 final."
+    }
+  ]
+}

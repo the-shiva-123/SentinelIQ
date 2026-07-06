@@ -1,0 +1,172 @@
+30-STEP DEPLOYMENT VERIFICATION CHECKLIST — NXTEL-2024-Q2
+
+# DOCUMENT METADATA AND APPROVAL TRAIL
+- **Document ID**: RN-2024-Q2-CHECKLIST
+- **Version**: 3.1.0
+- **Effective Date**: 2024-04-16
+- **Review Cycle**: Annual
+- **Owner Team**: Release Engineering
+- **Owner Email**: release-eng@asterion.example
+- **Approved By**: Rajesh Venkatraman (Service Delivery Manager, NexaTel)
+- **Approval Date**: 2024-04-16
+- **Classification**: Restricted - Internal Use Only
+
+## REVISION HISTORY
+| Version | Date | Author | Summary of Changes |
+|---|---|---|---|
+| 1.0 | 2021-01-15 | SRE Lead | Initial draft and release |
+| 1.1 | 2022-04-10 | Operations Manager | Updated escalation matrices and team roles |
+| 3.1.0 | 2024-04-16 | SRE Lead | Extended documentation with production runbooks and enterprise details |
+
+## GLOSSARY
+- **SLA (Service Level Agreement)**: A formal agreement defining the expected service levels and performance metrics between the service provider and the customer.
+- **SLO (Service Level Objective)**: Target metrics defined within an SLA (e.g., 99.9% uptime).
+- **SLI (Service Level Indicator)**: The actual measured service level (e.g., latency, throughput).
+- **OCS (Online Charging System)**: A telecom system that performs real-time rating and charging of network events.
+- **CDR (Call Detail Record)**: A data record documenting the details of a telecommunications transaction (e.g., call time, duration, data usage).
+- **TAP3 (Transferred Account Procedure version 3)**: Standard format for exchanging roaming billing data between mobile network operators.
+- **HSS (Home Subscriber Server)**: A central database containing subscriber-related and subscription-related information.
+- **MSISDN (Mobile Station International Subscriber Directory Number)**: The standard telephone number identifying a mobile subscription.
+- **eSIM (Embedded Subscriber Identity Module)**: A digital SIM that allows activation of a cellular plan without a physical SIM card.
+- **NOC (Network Operations Center)**: A centralized location where IT/telecom infrastructure is monitored and managed.
+- **SRE (Site Reliability Engineering)**: An engineering discipline that applies software engineering principles to operations and infrastructure.
+- **MFA (Multi-Factor Authentication)**: A security system requiring multiple credentials for access verification.
+- **API (Application Programming Interface)**: A set of protocols for building and integrating application software.
+- **ITIL (Information Technology Infrastructure Library)**: A set of detailed practices for IT service management.
+- **CI/CD (Continuous Integration/Continuous Deployment)**: A set of operating principles and practices for automated software delivery.
+- **TAP (Transferred Account Procedure)**: The billing process for roaming between mobile operators.
+- **TAP validator**: Component that validates TAP files for correctness.
+- **IMSI (International Mobile Subscriber Identity)**: Unique identifier for a mobile network user.
+- **HLR (Home Location Register)**: The main database of permanent subscriber information for a mobile network.
+- **SMSC (Short Message Service Center)**: The network element that manages the routing and delivery of SMS text messages.
+- **SMPP (Short Message Peer-to-Peer)**: A protocol used for exchanging SMS messages between SMSCs and routing entities.
+
+
+
+# DOCUMENT METADATA AND APPROVAL TRAIL
+- **Document ID**: RN-2024-Q2-CHECKLIST
+- **Version**: 3.1.0
+- **Effective Date**: 2024-04-16
+- **Review Cycle**: Annual
+- **Owner Team**: Release Engineering
+- **Owner Email**: release-eng@asterion.example
+- **Approved By**: Rajesh Venkatraman (Service Delivery Manager, NexaTel)
+- **Approval Date**: 2024-04-16
+- **Classification**: Restricted - Internal Use Only
+
+## REVISION HISTORY
+| Version | Date | Author | Summary of Changes |
+|---|---|---|---|
+| 1.0 | 2021-01-15 | SRE Lead | Initial draft and release |
+| 1.1 | 2022-04-10 | Operations Manager | Updated escalation matrices and team roles |
+| 3.1.0 | 2024-04-16 | SRE Lead | Extended documentation with production runbooks and enterprise details |
+
+## GLOSSARY
+- **SLA (Service Level Agreement)**: A formal agreement defining the expected service levels and performance metrics between the service provider and the customer.
+- **SLO (Service Level Objective)**: Target metrics defined within an SLA (e.g., 99.9% uptime).
+- **SLI (Service Level Indicator)**: The actual measured service level (e.g., latency, throughput).
+- **OCS (Online Charging System)**: A telecom system that performs real-time rating and charging of network events.
+- **CDR (Call Detail Record)**: A data record documenting the details of a telecommunications transaction (e.g., call time, duration, data usage).
+- **TAP3 (Transferred Account Procedure version 3)**: Standard format for exchanging roaming billing data between mobile network operators.
+- **HSS (Home Subscriber Server)**: A central database containing subscriber-related and subscription-related information.
+- **MSISDN (Mobile Station International Subscriber Directory Number)**: The standard telephone number identifying a mobile subscription.
+- **eSIM (Embedded Subscriber Identity Module)**: A digital SIM that allows activation of a cellular plan without a physical SIM card.
+- **NOC (Network Operations Center)**: A centralized location where IT/telecom infrastructure is monitored and managed.
+- **SRE (Site Reliability Engineering)**: An engineering discipline that applies software engineering principles to operations and infrastructure.
+- **MFA (Multi-Factor Authentication)**: A security system requiring multiple credentials for access verification.
+- **API (Application Programming Interface)**: A set of protocols for building and integrating application software.
+- **ITIL (Information Technology Infrastructure Library)**: A set of detailed practices for IT service management.
+- **CI/CD (Continuous Integration/Continuous Deployment)**: A set of operating principles and practices for automated software delivery.
+- **TAP (Transferred Account Procedure)**: The billing process for roaming between mobile operators.
+- **TAP validator**: Component that validates TAP files for correctness.
+- **IMSI (International Mobile Subscriber Identity)**: Unique identifier for a mobile network user.
+- **HLR (Home Location Register)**: The main database of permanent subscriber information for a mobile network.
+- **SMSC (Short Message Service Center)**: The network element that manages the routing and delivery of SMS text messages.
+- **SMPP (Short Message Peer-to-Peer)**: A protocol used for exchanging SMS messages between SMSCs and routing entities.
+
+
+# DOCUMENT METADATA AND APPROVAL TRAIL
+- **Document ID**: RN-2024-Q2-CHECKLIST
+- **Version**: 3.1.0
+- **Effective Date**: 2024-04-16
+- **Review Cycle**: Annual
+- **Owner Team**: Release Engineering
+- **Owner Email**: release-eng@asterion.example
+- **Approved By**: Rajesh Venkatraman (Service Delivery Manager, NexaTel)
+- **Approval Date**: 2024-04-16
+- **Classification**: Restricted - Internal Use Only
+
+## REVISION HISTORY
+| Version | Date | Author | Summary of Changes |
+|---|---|---|---|
+| 1.0 | 2021-01-15 | SRE Lead | Initial draft and release |
+| 1.1 | 2022-04-10 | Operations Manager | Updated escalation matrices and team roles |
+| 3.1.0 | 2024-04-16 | SRE Lead | Extended documentation with production runbooks and enterprise details |
+
+## GLOSSARY
+- **SLA (Service Level Agreement)**: A formal agreement defining the expected service levels and performance metrics between the service provider and the customer.
+- **SLO (Service Level Objective)**: Target metrics defined within an SLA (e.g., 99.9% uptime).
+- **SLI (Service Level Indicator)**: The actual measured service level (e.g., latency, throughput).
+- **OCS (Online Charging System)**: A telecom system that performs real-time rating and charging of network events.
+- **CDR (Call Detail Record)**: A data record documenting the details of a telecommunications transaction (e.g., call time, duration, data usage).
+- **TAP3 (Transferred Account Procedure version 3)**: Standard format for exchanging roaming billing data between mobile network operators.
+- **HSS (Home Subscriber Server)**: A central database containing subscriber-related and subscription-related information.
+- **MSISDN (Mobile Station International Subscriber Directory Number)**: The standard telephone number identifying a mobile subscription.
+- **eSIM (Embedded Subscriber Identity Module)**: A digital SIM that allows activation of a cellular plan without a physical SIM card.
+- **NOC (Network Operations Center)**: A centralized location where IT/telecom infrastructure is monitored and managed.
+- **SRE (Site Reliability Engineering)**: An engineering discipline that applies software engineering principles to operations and infrastructure.
+- **MFA (Multi-Factor Authentication)**: A security system requiring multiple credentials for access verification.
+- **API (Application Programming Interface)**: A set of protocols for building and integrating application software.
+- **ITIL (Information Technology Infrastructure Library)**: A set of detailed practices for IT service management.
+- **CI/CD (Continuous Integration/Continuous Deployment)**: A set of operating principles and practices for automated software delivery.
+- **TAP (Transferred Account Procedure)**: The billing process for roaming between mobile operators.
+- **TAP validator**: Component that validates TAP files for correctness.
+- **IMSI (International Mobile Subscriber Identity)**: Unique identifier for a mobile network user.
+- **HLR (Home Location Register)**: The main database of permanent subscriber information for a mobile network.
+- **SMSC (Short Message Service Center)**: The network element that manages the routing and delivery of SMS text messages.
+- **SMPP (Short Message Peer-to-Peer)**: A protocol used for exchanging SMS messages between SMSCs and routing entities.
+
+
+30-STEP DEPLOYMENT VERIFICATION CHECKLIST — NXTEL-2024-Q2
+
+PRE-DEPLOYMENT CHECKS
+=====================
+1. Confirm change ticket CHG-2024-04-01 status is approved. (Pass/Fail)
+2. Verify CAB meeting approval was recorded on 12-Apr-2024. (Pass/Fail)
+3. Check backup status of Oracle DB. Target: REC-2024-04-15. (Pass/Fail)
+4. Confirm pre-deployment staging environment tests completed with 100% pass rate. (Pass/Fail)
+5. Verify on-call roster includes all 10 SRE Leads. (Pass/Fail)
+6. Ensure customer notifications have been sent to Rajesh Venkatraman. (Pass/Fail)
+7. Check active network routes for API Gateway are set to failover targets. (Pass/Fail)
+8. Verify Kubernetes cluster resources are within 65% capacity threshold. (Pass/Fail)
+
+SERVICE ENDPOINT VERIFICATIONS
+==============================
+9. Verify health endpoint of Identity Broker (SVC-AUTH-001): /health returns HTTP 200. (Pass/Fail)
+10. Verify health endpoint of eSIM Orchestrator (SVC-PROV-002): /health returns HTTP 200. (Pass/Fail)
+11. Verify health endpoint of Online Charging Gateway (SVC-CHARG-001): /health returns HTTP 200. (Pass/Fail)
+12. Verify health endpoint of Partner API Gateway (SVC-APIGW-001): /health returns HTTP 200. (Pass/Fail)
+13. Verify health endpoint of QoS Alarm correlation Engine (SVC-NOC-001): /health returns HTTP 200. (Pass/Fail)
+14. Verify health endpoint of Fraud Velocity Rule Engine (SVC-FRAUD-001): /health returns HTTP 200. (Pass/Fail)
+15. Verify health endpoint of Fulfillment Orchestrator (SVC-ORDER-001): /health returns HTTP 200. (Pass/Fail)
+16. Verify health endpoint of Invoice Rendering Engine (SVC-BILL-001): /health returns HTTP 200. (Pass/Fail)
+17. Verify health endpoint of Digital KYC Adapter (SVC-KYC-001): /health returns HTTP 200. (Pass/Fail)
+18. Verify health endpoint of CDR Mediation Pipeline (SVC-MED-001): /health returns HTTP 200. (Pass/Fail)
+
+SMOKE TESTS
+===========
+19. Verify JWT validation success rate matches baseline. (Pass/Fail)
+20. Perform test eSIM registration. Verify profile generated and status updated. (Pass/Fail)
+21. Run dummy charging session transaction. Check response code is 0 (success). (Pass/Fail)
+22. Test Partner API Gateway rate limiting isolation configuration. (Pass/Fail)
+23. Run test customer lookup against Customer 360 API. (Pass/Fail)
+24. Send test SMS notification via SMS Notification Hub. (Pass/Fail)
+25. Trigger mock alarm and verify QoS Alarm correlation in NOC dashboard. (Pass/Fail)
+26. Verify CDR Mediation Pipeline processes test files within 180ms/record threshold. (Pass/Fail)
+
+ROLLBACK READINESS & FINAL SIGN-OFF
+===================================
+27. Confirm rollback procedure for v3.0.0 is ready. (Pass/Fail)
+28. Verify rollback timeout is under 15 minutes for all tier_0 services. (Pass/Fail)
+29. Confirm post-deployment telemetry is active in Grafana dashboard. (Pass/Fail)
+30. Obtain final sign-off from Service Delivery Manager Rajesh Venkatraman. (Pass/Fail)
