@@ -15,7 +15,7 @@ Follow these steps to set up your local development environment:
 
 ```bash
 # Clone the repository
-git clone <your-repository-url>
+git clone <https://github.com/the-shiva-123/SentinelIQ.git>
 cd sentineliq
 
 # Set up environment configuration
