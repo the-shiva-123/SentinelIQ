@@ -4,7 +4,7 @@ import logging
 from pathlib import Path
 from typing import List, Union
 
-from ingestion.extractor import TextFileExtractor, LogStreamExtractor
+from ingestion.extractor import TextFileExtractor, LogStreamExtractor, PDFFileExtractor, DocxFileExtractor
 from ingestion.repositories import DocumentRepository
 from ingestion.validator import DocumentValidator
 from utils.config import settings
@@ -21,9 +21,10 @@ class IngestionService:
     def __init__(self, repository: DocumentRepository | None = None) -> None:
         self.text_extractor = TextFileExtractor()
         self.log_extractor = LogStreamExtractor()
+        self.pdf_extractor = PDFFileExtractor()
+        self.docx_extractor = DocxFileExtractor()
         self.validator = DocumentValidator()
         
-        # Initialize default store targeting the configured repository path
         default_store = DocumentStore()
         self.repository = repository or DocumentRepository(store=default_store)
 
@@ -34,19 +35,25 @@ class IngestionService:
             logger.error(f"Ingestion aborted. Target file does not exist: {target_path}")
             raise FileNotFoundError(f"File missing at path: {target_path}")
 
-        # Rule 1: Dynamic Routing based on file layout rules
-        if target_path.suffix.lower() == ".log":
+        # Dynamic Routing switch by explicit file suffix extension
+        file_extension = target_path.suffix.lower()
+        
+        if file_extension == ".log":
             document = self.log_extractor.extract(target_path)
+        elif file_extension == ".pdf":
+            document = self.pdf_extractor.extract(target_path)
+        elif file_extension == ".docx":
+            document = self.docx_extractor.extract(target_path)
         else:
             document = self.text_extractor.extract(target_path)
 
-        # Rule 2: Strict contract validations check
+        # Strict contract validations check
         result = self.validator.validate(document)
         if not result.is_valid:
             logger.warning(f"Validation constraints triggered for {target_path.name}")
             document.metadata["validation_issues"] = [issue.message for issue in result.issues]
 
-        # Rule 3: Repository layer persistence wrapper
+        # Repository layer persistence wrapper
         success = self.repository.add(document)
         if not success:
             raise IOError(f"Database rejected document commit sequence: {document.source_id}")
@@ -67,7 +74,6 @@ class IngestionService:
                 processed_documents.append(doc)
                 metrics["successful"] += 1
             except Exception as batch_error:
-                # Production Boundary Guard: Log the specific file break, but keep the pipeline processing the rest
                 metrics["failed"] += 1
                 logger.error(f"❌ Batch pipeline bypassed processing on asset '{Path(path).name}': {batch_error}")
                 continue

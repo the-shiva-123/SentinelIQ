@@ -1,73 +1,96 @@
 from __future__ import annotations
 
-import json
 import logging
 from pathlib import Path
-from typing import Optional
-
-from ingestion.readers import DocumentExtractorBase, FileSystemReader
 from utils.domain import Document
 
+# Third-party binary parsing libraries
+import pypdf
+import docx
+
 logger = logging.getLogger("SentinelIQ.Extractor")
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 
-class TextFileExtractor(DocumentExtractorBase):
-    """Production-grade text extractor with robust error handling boundaries."""
-
-    def __init__(self, reader: Optional[FileSystemReader] = None) -> None:
-        self.reader = reader or FileSystemReader()
-
+class TextFileExtractor:
+    """Extracts raw text content from standard flat plain-text documents."""
+    
     def extract(self, path: Path) -> Document:
-        """Extracts text documents defensively catching system errors."""
-        if not path.exists():
-            logger.error(f"Target path does not exist for extraction: {path}")
-            raise FileNotFoundError(f"Extraction target missing: {path}")
-
         try:
-            # Delegate to core filesystem reader framework
-            return self.reader.read(path)
-        except PermissionError:
-            logger.error(f"System access permissions denied for document: {path}")
-            raise PermissionError(f"Access denied reading file: {path.name}")
+            content = path.read_text(encoding="utf-8")
+            return Document(
+                source_id=path.stem,
+                title=path.name,
+                content=content,
+                metadata={"file_type": "text", "path": str(path)}
+            )
         except Exception as e:
-            logger.error(f"Unexpected file system read failure on document {path.name}: {e}")
             raise IOError(f"Failed extracting raw text from target line: {e}")
 
 
-class LogStreamExtractor(DocumentExtractorBase):
-    """Specialized engine designed to parse line-by-line JSON operational logs safely."""
+class LogStreamExtractor:
+    """Specialized parser reading operational logs line-by-line, filtering out noise."""
+    
+    def extract(self, path: Path) -> Document:
+        valid_lines = []
+        line_count = 0
+        
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                line_count += 1
+                clean_line = line.strip()
+                # Production filter logic rules
+                if not clean_line or "[DEBUG]" in clean_line:
+                    continue
+                if len(clean_line.split(" - ")) < 2:
+                    logger.warning(f"Malformed operational stream record bypassed at line {line_count} inside {path.name}")
+                    continue
+                valid_lines.append(clean_line)
+                
+        return Document(
+            source_id=f"LOG_{path.stem.upper()}",
+            title=path.name,
+            content="\n".join(valid_lines),
+            metadata={"file_type": "log", "line_count": line_count, "path": str(path)}
+        )
+
+
+class PDFFileExtractor:
+    """Production extractor decoding binary PDF structures page by page."""
 
     def extract(self, path: Path) -> Document:
-        """Iterates through JSON lines, isolating corrupted entries dynamically without crashing."""
-        valid_records = []
-        
         try:
-            with open(path, "r", encoding="utf-8") as f:
-                for line_idx, line in enumerate(f, 1):
-                    line_str = line.strip()
-                    if not line_str:
-                        continue
-                    try:
-                        valid_records.append(json.loads(line_str))
-                    except json.JSONDecodeError:
-                        # Production boundary rule: isolate corrupted trace rows without halting execution
-                        logger.warning(f"Malformed operational stream record bypassed at line {line_idx} inside {path.name}")
-                        continue
-
-            # Re-compile pristine structured records back to search-indexable content strings
-            compiled_content = "\n".join([json.dumps(r) for r in valid_records])
+            text_content = []
+            with open(path, "rb") as f:
+                reader = pypdf.PdfReader(f)
+                for page in reader.pages:
+                    page_text = page.extract_text()
+                    if page_text:
+                        text_content.append(page_text)
+            
             return Document(
-                source_id=f"LOG_{path.stem.upper()}",
-                title=path.stem.replace("_", " ").title(),
-                content=compiled_content,
-                source_path=path,
-                metadata={
-                    "file_type": ".log",
-                    "total_valid_records": str(len(valid_records)),
-                    "file_size_bytes": str(path.stat().st_size)
-                }
+                source_id=path.stem,
+                title=path.name,
+                content="\n".join(text_content),
+                metadata={"file_type": "pdf", "pages": len(reader.pages), "path": str(path)}
             )
         except Exception as e:
-            logger.error(f"Fatal disruption occurred parsing log file {path.name}: {e}")
-            raise e
+            raise IOError(f"Failed extracting PDF binary text stream: {e}")
+
+
+class DocxFileExtractor:
+    """Production extractor parsing office OpenXML .docx compressed archives."""
+
+    def extract(self, path: Path) -> Document:
+        try:
+            doc = docx.Document(path)
+            # Pull text from all paragraphs within the asset archive
+            paragraphs_text = [p.text for p in doc.paragraphs if p.text.strip()]
+            
+            return Document(
+                source_id=path.stem,
+                title=path.name,
+                content="\n".join(paragraphs_text),
+                metadata={"file_type": "docx", "paragraphs": len(paragraphs_text), "path": str(path)}
+            )
+        except Exception as e:
+            raise IOError(f"Failed extracting word docx text matrix: {e}")
