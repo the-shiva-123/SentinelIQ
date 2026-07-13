@@ -3,14 +3,14 @@ from ingestion.extractor import TextFileExtractor
 from ingestion.readers import DocumentDiscovery, DocumentExtractorBase, FileSystemReader
 from ingestion.repositories import DocumentRepository
 from ingestion.service import IngestionService
-from ingestion.validator import DocumentValidator
+from ingestion.validator import DataContractValidator
 
 __all__ = [
     "APIClient",
     "DocumentDiscovery",
     "DocumentExtractorBase",
     "DocumentRepository",
-    "DocumentValidator",
+    "DataContractValidator",
     "FileSystemReader",
     "IngestionService",
     "TextFileExtractor",

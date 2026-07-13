@@ -18,3 +18,12 @@ dist/
 htmlcov/
 .ipynb_checkpoints/
 .DS_Store
+
+# Local environment and generated data
+.env
+
+# Generated and evaluation artifacts
+data/processed/
+data/golden/
+data/reports/
+data/raw/logs/

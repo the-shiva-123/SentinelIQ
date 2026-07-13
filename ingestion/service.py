@@ -6,7 +6,7 @@ from typing import List, Union
 
 from ingestion.extractor import TextFileExtractor, LogStreamExtractor, PDFFileExtractor, DocxFileExtractor
 from ingestion.repositories import DocumentRepository
-from ingestion.validator import DocumentValidator
+from ingestion.validator import DataContractValidator
 from utils.config import settings
 from utils.domain import Document
 from utils.persistence import DocumentStore
@@ -23,7 +23,7 @@ class IngestionService:
         self.log_extractor = LogStreamExtractor()
         self.pdf_extractor = PDFFileExtractor()
         self.docx_extractor = DocxFileExtractor()
-        self.validator = DocumentValidator()
+        self.validator = DataContractValidator()
         
         default_store = DocumentStore()
         self.repository = repository or DocumentRepository(store=default_store)
