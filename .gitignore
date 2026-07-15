@@ -1,4 +1,6 @@
 .env
+.env.*
+!.env.example
 __pycache__/
 *.py[cod]
 *.pyo
@@ -18,9 +20,14 @@ dist/
 htmlcov/
 .ipynb_checkpoints/
 .DS_Store
-
-# Local environment and generated data
-.env
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Generated and evaluation artifacts
 data/processed/
