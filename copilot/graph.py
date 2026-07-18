@@ -21,11 +21,16 @@ class CopilotWorkflowGraph:
 
     def analyze_query_node(self, state: AgentState) -> Dict[str, Any]:
         """Node: Evaluates user intent to determine optimal down-stream retrieval routing."""
-        query = state["query"]
+        query = state["query"].lower()
         logger.info(f"🕸️ [Node: Analyze Query] Profiling token signatures for: '{query}'")
         
-        # Simple routing rule pattern logic matching security/error strings
-        decision = "retrieve_rag" if any(x in query.lower() for x in ["err", "auth", "policy", "release"]) else "fallback"
+        # Expanded keyword array to correctly trigger RAG on telemetry & ticket logs
+        rag_keywords = [
+            "err", "auth", "policy", "release", 
+            "ticket", "incident", "open", "log", "telemetry"
+        ]
+        
+        decision = "retrieve_rag" if any(x in query for x in rag_keywords) else "fallback"
         return {"routing_decision": decision}
 
     def retrieve_context_node(self, state: AgentState) -> Dict[str, Any]:
@@ -47,7 +52,6 @@ class CopilotWorkflowGraph:
 
     def compile_graph(self) -> CompiledGraphWorkflow:
         """Stitches execution steps together into a linear state machine flow."""
-        # This encapsulates the clean structural graph architecture patterns of LangGraph
         return CompiledGraphWorkflow(self)
 
 class CompiledGraphWorkflow:

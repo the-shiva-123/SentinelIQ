@@ -2,17 +2,18 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Dict, Any
 
 # Bring project root into scope path context
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from fastapi import FastAPI, HTTPException, Response
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from copilot.graph import CopilotWorkflowGraph
 
 app = FastAPI(title="SentinelIQ RAG Copilot Service API", version="1.0.0")
+
+# Register CORS middleware natively (This completely manages preflights out-of-the-box)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -25,6 +26,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 workflow_instance = CopilotWorkflowGraph().compile_graph()
 
 class QueryRequest(BaseModel):
@@ -34,11 +36,6 @@ class QueryResponse(BaseModel):
     query: str
     answer: str
     routing: str
-
-@app.options("/api/v1/query")
-async def options_query() -> Response:
-    """Handle browser preflight requests for the query endpoint."""
-    return Response(status_code=200)
 
 @app.post("/api/v1/query", response_model=QueryResponse)
 async def process_query(payload: QueryRequest):
